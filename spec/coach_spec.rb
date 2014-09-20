@@ -20,5 +20,4 @@ describe Coach do
 		expect(coach.passanger_count).to eq(0)
 	end
 
-
 end
