@@ -25,4 +25,8 @@ class Station
 		@trains << train
 	end
 
+	def leave(train)
+		@trains.pop
+	end
+
 end

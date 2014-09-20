@@ -14,4 +14,8 @@ class Train
 		station.arrive(self)
 	end
 
+	def leave(station)
+		station.leave(self)
+	end
+
 end
