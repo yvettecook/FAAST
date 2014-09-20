@@ -9,5 +9,9 @@ describe Station do
 		station.add(:person)
 		expect(station.passangers_count).to eq(1)
 	end
+
+	
+
+
 	
 end
