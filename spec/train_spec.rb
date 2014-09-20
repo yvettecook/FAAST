@@ -31,7 +31,9 @@ describe Train do
 	# 	expect(@coaches[1].count_passagers).to eq(20)
 	# end
 
-	it "should be able to remove passangers from coaches" do
+	it "should be able to remove empty passangers from all its coaches" do
+		
+		
 	end
 
 	

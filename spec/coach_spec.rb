@@ -3,7 +3,7 @@ require 'Coach'
 describe Coach do
 
 	let (:coach) { Coach.new }
-	let (:person) { double person }
+	let (:person) { Person.new }
 	let (:station) { Station.new }
 
 	it "should have a capacity of 40" do
