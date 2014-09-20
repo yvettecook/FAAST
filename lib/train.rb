@@ -10,4 +10,8 @@ class Train
 		@coaches
 	end
 
+	def arrive(station)
+		station.arrive(self)
+	end
+
 end

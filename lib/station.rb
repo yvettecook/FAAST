@@ -2,6 +2,7 @@ class Station
 
 	def initialize
 		@platform = []
+		@trains = []
 	end
 
 	def add(person)
@@ -14,6 +15,14 @@ class Station
 
 	def passangers_count
 		@platform.length
+	end
+
+	def train_count
+		@trains.length
+	end
+
+	def arrive(train)
+		@trains << train
 	end
 
 end
