@@ -13,7 +13,7 @@ class Station
 		@platform.delete(person)
 	end
 
-	def passangers_count
+	def passagers_count
 		@platform.length
 	end
 
@@ -27,6 +27,16 @@ class Station
 
 	def leave(train)
 		@trains.pop
+	end
+
+	def passagers_board(train)
+		#before adding in the passager_count line, the method was only adding half of the passagers to the train and leaving rest on the platform. No idea why!
+		passagers_count.times do 
+			@platform.each do |person|
+			train.add(remove(person))
+			end
+		end
+
 	end
 
 end

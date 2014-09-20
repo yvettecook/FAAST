@@ -1,4 +1,4 @@
-require 'coach'
+# srequire 'coach.rb'
 
 class Train
 
@@ -18,4 +18,9 @@ class Train
 		station.leave(self)
 	end
 
+	def add(person)
+		@coaches[0].add_passager(person)
+	end
+
 end
+

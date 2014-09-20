@@ -10,14 +10,14 @@ describe Coach do
 	end
 
 	it "should be able to add people" do
-		coach.add_passanger(:person)
-		expect(coach.passanger_count).to eq(1)
+		coach.add_passager(:person)
+		expect(coach.passagers_count).to eq(1)
 	end
 
 	it "should be able to remove people" do
-		coach.add_passanger(:person)
-		coach.remove_passanger(:person)
-		expect(coach.passanger_count).to eq(0)
+		coach.add_passager(:person)
+		coach.remove_passager(:person)
+		expect(coach.passagers_count).to eq(0)
 	end
 
 end
