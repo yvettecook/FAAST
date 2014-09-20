@@ -22,8 +22,8 @@ class Train
 		@coaches[0].add_passager(person)
 	end
 
-	def count_passagers
-	end
+	
+
 
 end
 

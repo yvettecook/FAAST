@@ -13,7 +13,7 @@ class Coach
 		@on_board << passager
 	end
 
-	def remove_passager(passager)
+	def remove(passager)
 		@on_board.pop
 	end
 
@@ -25,5 +25,12 @@ class Coach
 		passagers_count == @capacity
 	end
 
+	def empty(station)
+		passagers_count.times do 
+			@on_board.each do |person|
+				station.add(remove(person))
+			end		
+		end
+	end
 
 end

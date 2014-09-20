@@ -31,7 +31,7 @@ describe Station do
 		expect(station.passagers_count).to eq(0)
 	end
 
-	# it "should be able to remove passangers from coaches" do
+	# it "should be able to remove passangers from train" do
 	# 	20.times {
 	# 		person = Person.new
 	# 		person.touch_in(station)
