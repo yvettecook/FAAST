@@ -36,7 +36,9 @@ class Station
 			train.add(remove(person))
 			end
 		end
+	end
 
+	def passangers_alight(train)
 	end
 
 end

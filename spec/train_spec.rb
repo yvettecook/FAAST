@@ -21,4 +21,8 @@ describe Train do
 		train.leave(station)
 		expect(station.train_count).to eq(0)
 	end 
+
+	# it "should be able to count the total passagers" do
+		
+	# 	expect(train.count_passagers).to eq(60)
 end

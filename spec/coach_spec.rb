@@ -20,4 +20,12 @@ describe Coach do
 		expect(coach.passagers_count).to eq(0)
 	end
 
+	it "should be able to report if full" do
+		40.times { |person|
+			person = Person.new
+			coach.add_passager(person) 
+		}
+		expect(coach.full?).to eq(true)
+	end
+
 end

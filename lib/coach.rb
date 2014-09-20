@@ -21,4 +21,9 @@ class Coach
 		@on_board.length
 	end
 
+	def full?
+		passagers_count == @capacity
+	end
+
+
 end
