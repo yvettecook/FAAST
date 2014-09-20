@@ -9,8 +9,12 @@ class Coach
 		@capacity 
 	end
 
-	def add_passangers(passangers)
-		@on_board << passangers
+	def add_passanger(passanger)
+		@on_board << passanger
+	end
+
+	def remove_passanger(passanger)
+		@on_board.pop
 	end
 
 	def passanger_count

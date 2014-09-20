@@ -10,8 +10,14 @@ describe Coach do
 	end
 
 	it "should be able to hold people" do
-		coach.add_passangers(:person)
+		coach.add_passanger(:person)
 		expect(coach.passanger_count).to eq(1)
+	end
+
+	it "should be able to remove people" do
+		coach.add_passanger(:person)
+		coach.remove_passanger(:person)
+		expect(coach.passanger_count).to eq(0)
 	end
 
 
