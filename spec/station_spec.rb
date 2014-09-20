@@ -10,8 +10,4 @@ describe Station do
 		expect(station.passangers_count).to eq(1)
 	end
 
-	
-
-
-	
 end

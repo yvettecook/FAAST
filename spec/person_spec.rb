@@ -17,5 +17,6 @@ let (:station) { Station.new }
 		person.touch_out(station)
 		expect(station.passangers_count).to eq(0)
 	end
+	
 end
 

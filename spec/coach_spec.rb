@@ -9,7 +9,7 @@ describe Coach do
 		expect(coach.capacity).to eq(40)
 	end
 
-	it "should be able to hold people" do
+	it "should be able to add people" do
 		coach.add_passanger(:person)
 		expect(coach.passanger_count).to eq(1)
 	end
