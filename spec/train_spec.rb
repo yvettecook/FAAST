@@ -52,7 +52,7 @@ describe Train do
 			person = Person.new 
 			train.add(person)
 		end
-		train.empty(station)
+		train.empty_passengers(station)
 		expect(train.coaches[0].passengers_count).to eq(0)
 		expect(train.coaches[1].passengers_count).to eq(0)
 		expect(train.coaches[2].passengers_count).to eq(0)

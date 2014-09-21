@@ -10,7 +10,7 @@ class Train
 
 	def arrive(station)
 		station.arrive(self)
-		self.empty(station)
+		self.empty_passengers(station)
 	end
 
 	def leave(station)
@@ -29,9 +29,9 @@ class Train
 		end
 	end
 
-	def empty(station)
+	def empty_passengers(station)
 		@coaches.each do |coach|
-			coach.empty(station)
+			coach.empty_passengers(station)
 		end
 	end
 

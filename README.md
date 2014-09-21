@@ -20,12 +20,24 @@ The FAAST system will cater for the following:
 * RSpec
 * Git Hub
 
-#### Objects and Methods
+#### Objects, Attributes and Methods
+
+Methods listed are those needed to use the program. There are others in the background that wouldn't normally be directly accessed.
 
 1. Person
+*Initialized with a balance of 10 GBP.*
 	* touch_in(station)
 	* touch_out(station) 
 2. Station
-	* pass
+*Initialized with an empty platform array to hold passengers, and an empty array.*'trains' to hold trains.
+	* passenger_count
+	* train_count
+	* passengers_board(train)
 3. Train
+*Initialized with 3 empty coaches (immutable)*
+	* passengers_count
+	* arrive(station)
+	* leave(station)
+	* empty_passengers(station)
 4. Coach
+*Initialized with a capacity of 40 (immutable), with an empty array 'on_board' to hold passengers*

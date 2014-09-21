@@ -34,7 +34,7 @@ describe Coach do
 			person = Person.new
 			coach.add_passenger(person) 
 		}
-		coach.empty(station)
+		coach.empty_passengers(station)
 		expect(coach.passengers_count).to eq(0)
 		expect(station.passengers_count).to eq(40)
 	end
