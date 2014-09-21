@@ -30,6 +30,17 @@ describe Station do
 		expect(station.passagers_count).to eq(0)
 	end
 
+	it "should not lose passangers when attempting to overfill a train" do
+		140.times{
+			person = Person.new
+			person.touch_in(station)
+		}
+		train.arrive(station)
+		expect(lambda { station.passagers_board(train)}).to raise_error(RuntimeError)
+		expect(train.passagers_count).to eq(120)
+		expect(station.passagers_count).to eq(19)
+	end
+
 	it "should not be able to add passagers to a train that isn't at the station" do
 		20.times {
 			person = Person.new
@@ -40,6 +51,7 @@ describe Station do
 		expect(station.passagers_count).to eq(20)
 		expect(train2.passagers_count).to eq(0)
 	end
+
 
 
 

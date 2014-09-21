@@ -35,15 +35,15 @@ describe Train do
 
 	it "should raise error before more passangers than capacity are added" do
 		
-		121.times do |person| 
+		120.times do |person| 
 			person = Person.new 
 			train.add(person)
 		end
+		expect(lambda {train.add(person) }).to raise_error(RuntimeError)
 		expect(train.coaches[0].passagers_count).to eq(40)
 		expect(train.coaches[1].passagers_count).to eq(40)
 		expect(train.coaches[2].passagers_count).to eq(40)
-		#Checked on IRB and the error below is being raised. So wording below must be wrong somewhere?
-		#expect(lambda {train.add(person) }).to raise_error(RuntimeError)
+
 	end
 
 

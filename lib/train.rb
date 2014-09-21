@@ -25,8 +25,7 @@ class Train
 		elsif coaches[2].passagers_count < 40
 			@coaches[2].add_passager(person)
 		else
-			#was raise "train full", but rspec wording wrong somewhere, so using puts for now
-			puts "Train full"
+			raise "Train full. #{Person} lost in the confusion"
 		end
 	end
 
