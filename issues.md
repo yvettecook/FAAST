@@ -1,7 +1,8 @@
 ##Known issues:
 
 Bugs:
-- [ ] When a station has more than 120 passagers, and calls 'passager.board(train)' method, the 'excess' passagers are lost to the system
+- [x] ~~When a station has more than 120 passagers, and calls 'passager.board(train)' method, the 'excess' passagers are lost to the system~~
+	- [ ] Now station only loses 1 passager. Better than before, but still will need fixing
 - [x] ~~Stations can add passagers to trains that aren't currently at that station~~
 
 
