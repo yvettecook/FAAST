@@ -47,11 +47,17 @@ describe Train do
 	end
 
 
-	# it "should be able to remove passangers from all its coaches" do
-
-	# 	train.empty(@coaches)
-
-	# end
+	it "should be able to remove passangers from all its coaches" do
+		120.times do |person| 
+			person = Person.new 
+			train.add(person)
+		end
+		train.empty(station)
+		expect(train.coaches[0].passagers_count).to eq(0)
+		expect(train.coaches[1].passagers_count).to eq(0)
+		expect(train.coaches[2].passagers_count).to eq(0)
+		expect(station.passagers_count).to eq(120)
+	end
 
 	
 end
