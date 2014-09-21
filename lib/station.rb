@@ -1,5 +1,8 @@
 class Station
 
+	attr_reader :trains
+	attr_reader :platform
+
 	def initialize
 		@platform = []
 		@trains = []

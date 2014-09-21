@@ -1,12 +1,10 @@
 class Coach
 
+	attr_reader :capacity
+
 	def initialize
 		@capacity = 40
 		@on_board = []
-	end
-
-	def capacity
-		@capacity 
 	end
 
 	def add_passager(passager)

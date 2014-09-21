@@ -1,15 +1,9 @@
 class Person
 
+	attr_accessor :balance
+
 	def initialize
 		@balance = 10
-	end
-
-	def balance
-		@balance
-	end
-
-	def set_balance(balance)
-		@balance = balance
 	end
 
 

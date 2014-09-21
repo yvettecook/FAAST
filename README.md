@@ -1,6 +1,7 @@
-##Makers Academy - Architect Badge Challenge
+##Makers Academy 
+###Week 1: Architect Badge Challenge
 
-###Spec
+####Spec
 
 The FAAST system will cater for the following:
 
@@ -11,8 +12,17 @@ The FAAST system will cater for the following:
 * Each coach of a train can hold up to 40 passagers
 * Each train is made of a number of coaches
 
-##Tools Used
+####Tools Used
 
-Sublime Text 3 
-Command Line
-Git Hub	
+* Sublime Text 3 
+* Command Line
+* IRB
+* RSpec
+* Git Hub
+
+#### Objects and Methods
+
+1. Person
+2. Station
+3. Train
+4. Coach

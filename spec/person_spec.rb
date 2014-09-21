@@ -23,6 +23,11 @@ let (:station) { Station.new }
 		expect(person.balance.is_a? Integer).to be(true)
 	end
 
+	it "should be unable to enter station with less than 2GBP balance" do
+		person.balance=(1)
+		expect(lambda {person.touch_in(station)}).to raise_error(RuntimeError)
+	end
+
 	
 end
 
