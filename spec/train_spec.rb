@@ -23,12 +23,13 @@ describe Train do
 	end 
 
 	it  "should be able to fill up coaches to capacity, then move to the next" do
-		60.times do |person| 
+		120.times do |person| 
 			person = Person.new 
 			train.add(person)
 		end
 		expect(train.coaches[0].passagers_count).to eq(40)
-		expect(train.coaches[1].passagers_count).to eq(20)
+		expect(train.coaches[1].passagers_count).to eq(40)
+		expect(train.coaches[2].passagers_count).to eq(40)
 	end
 
 	# it "should be able to remove passangers from all its coaches" do

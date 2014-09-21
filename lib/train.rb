@@ -19,8 +19,10 @@ class Train
 	def add(person)
 		if coaches[0].passagers_count < 40
 			@coaches[0].add_passager(person)
-		else coaches[1].passagers_count < 40
+		elsif coaches[1].passagers_count < 40
 			@coaches[1].add_passager(person)
+		else coaches[2].passagers_count < 40
+			@coaches[2].add_passager(person)
 		end
 	end
 
