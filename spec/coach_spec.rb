@@ -1,4 +1,4 @@
-require 'Coach'
+require 'coach'
 
 describe Coach do
 

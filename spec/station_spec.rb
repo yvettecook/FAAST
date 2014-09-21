@@ -38,7 +38,7 @@ describe Station do
 		train.arrive(station)
 		expect(lambda { station.passagers_board(train)}).to raise_error(RuntimeError)
 		expect(train.passagers_count).to eq(120)
-		expect(station.passagers_count).to eq(19)
+		expect(station.passagers_count).to eq(20)
 	end
 
 	it "should not be able to add passagers to a train that isn't at the station" do

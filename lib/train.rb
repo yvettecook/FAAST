@@ -1,3 +1,5 @@
+require 'coach'
+
 class Train
 
 	def initialize

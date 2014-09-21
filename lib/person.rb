@@ -1,7 +1,7 @@
 class Person
 
 	def initialize
-		@balance = 1 + rand(20)
+		@balance = rand(20)
 	end
 
 	def balance

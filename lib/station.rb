@@ -34,15 +34,13 @@ class Station
 		if @trains.include? train
 			passagers_count.times do 
 				@platform.each do |person|
-				train.add(remove(person))
+				train.add(person)
+				self.remove(person)
 				end
 			end
 		else
 			raise "#{Train} is not at this station"
 		end
-	end
-
-	def passangers_alight(train)
 	end
 
 end
