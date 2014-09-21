@@ -28,12 +28,15 @@ Methods listed are those needed to use the program. There are others in the back
 1. Person
 
 *Initialized with a balance of 10 GBP.*
+
 	* touch_in(station)
 	* touch_out(station)
 	
 2. Station
 
-*Initialized with an empty platform array to hold passengers, and an empty array.*'trains' to hold trains.
+*Initialized with an empty platform array to hold passengers, and an empty array.*
+	
+	*'trains' to hold trains.
 	* passenger_count
 	* train_count
 	* passengers_board(train)
@@ -41,6 +44,7 @@ Methods listed are those needed to use the program. There are others in the back
 3. Train
 
 *Initialized with 3 empty coaches (immutable)*
+
 	* passengers_count
 	* arrive(station)
 	* leave(station)
