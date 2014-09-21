@@ -42,3 +42,4 @@ class Station
 	end
 
 end
+

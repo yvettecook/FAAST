@@ -22,19 +22,20 @@ describe Train do
 		expect(station.train_count).to eq(0)
 	end 
 
-	# it  "should be able to fill up coaches to capacity, then move to the next" do
-	# 	60.times do |person| 
-	# 		person = Person.new 
-	# 		train.add(person)
-	# 	end
-	# 	expect(@coaches[0].count_passagers).to eq(20)
-	# 	expect(@coaches[1].count_passagers).to eq(20)
-	# end
-
-	it "should be able to remove empty passangers from all its coaches" do
-		
-		
+	it  "should be able to fill up coaches to capacity, then move to the next" do
+		60.times do |person| 
+			person = Person.new 
+			train.add(person)
+		end
+		expect(train.coaches[0].passagers_count).to eq(40)
+		expect(train.coaches[1].passagers_count).to eq(20)
 	end
+
+	# it "should be able to remove passangers from all its coaches" do
+
+	# 	train.empty(@coaches)
+
+	# end
 
 	
 end
