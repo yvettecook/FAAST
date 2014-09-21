@@ -2,7 +2,7 @@
 
 Bugs:
 - [x] ~~When a station has more than 120 passagers, and calls 'passager.board(train)' method, the 'excess' passagers are lost to the system~~
-	- [ ] Now station only loses 1 passager. Better than before, but still will need fixing
+	- [x] ~~Now station only loses 1 passager. Better than before, but still will need fixing~~
 - [x] ~~Stations can add passagers to trains that aren't currently at that station~~
 
 
@@ -14,4 +14,4 @@ Potential Improvements:
 
 
 Bonus
-- [ ] Add payment system, to charge passagers 2 GBP when touching in
+- [x] ~~Add payment system, to charge passagers 2 GBP when touching in~~
