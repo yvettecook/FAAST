@@ -17,6 +17,10 @@ let (:station) { Station.new }
 		person.touch_out(station)
 		expect(station.passagers_count).to eq(0)
 	end
+
+	it "should hold a random amount of money on initialize" do
+		expect(person.balance.is_a? Integer).to be(true)
+	end
 	
 end
 
