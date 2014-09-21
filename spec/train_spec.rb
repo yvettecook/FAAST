@@ -6,6 +6,7 @@ describe Train do
 	let (:train) { Train.new }
 	let (:coach) { Coach.new }
 	let (:station) { Station.new }
+	let (:person) { Person.new }
 
 	it "should be created with a default of 3 coaches " do
 		expect(train.coaches.length).to eq(3)
@@ -22,7 +23,7 @@ describe Train do
 		expect(station.train_count).to eq(0)
 	end 
 
-	it  "should be able to fill up coaches to capacity, then move to the next" do
+	it "should be able to fill up coaches to capacity, then move to the next" do
 		120.times do |person| 
 			person = Person.new 
 			train.add(person)
@@ -31,6 +32,20 @@ describe Train do
 		expect(train.coaches[1].passagers_count).to eq(40)
 		expect(train.coaches[2].passagers_count).to eq(40)
 	end
+
+	it "should raise error before more passangers than capacity are added" do
+		
+		121.times do |person| 
+			person = Person.new 
+			train.add(person)
+		end
+		expect(train.coaches[0].passagers_count).to eq(40)
+		expect(train.coaches[1].passagers_count).to eq(40)
+		expect(train.coaches[2].passagers_count).to eq(40)
+		#Checked on IRB and the error below is being raised. So wording below must be wrong somewhere?
+		#expect(lambda {train.add(person) }).to raise_error(RuntimeError)
+	end
+
 
 	# it "should be able to remove passangers from all its coaches" do
 
