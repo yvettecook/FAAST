@@ -10,6 +10,7 @@ class Person
 
 	def touch_in(station)
 		station.add(self)
+		@balance = @balance -2
 	end
 
 	def touch_out(station)

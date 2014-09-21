@@ -52,6 +52,13 @@ describe Station do
 		expect(train2.passagers_count).to eq(0)
 	end
 
+	it "should deduct 2 GBP from balance when touching in" do
+		a = person.balance
+		person.touch_in(station)
+		expect(person.balance).to eq(a - 2)
+	end 
+
+
 
 
 
