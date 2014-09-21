@@ -18,7 +18,6 @@ describe Station do
 		expect(station.train_count).to eq(1)
 	end
 
-
 	it "should be able to add passagers to coaches" do
 		20.times {
 			person = Person.new
@@ -30,6 +29,18 @@ describe Station do
 		expect(train.coaches[0].passagers_count).to eq(20)
 		expect(station.passagers_count).to eq(0)
 	end
+
+	it "should not be able to add passagers to a train that isn't at the station" do
+		20.times {
+			person = Person.new
+			person.touch_in(station)
+		}
+		train2 = Train.new
+		expect(lambda {station.passagers_board(train2)}).to raise_error(RuntimeError)
+		expect(station.passagers_count).to eq(20)
+		expect(train2.passagers_count).to eq(0)
+	end
+
 
 
 end

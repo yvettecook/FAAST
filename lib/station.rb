@@ -31,10 +31,14 @@ class Station
 
 	def passagers_board(train)
 		#before adding in the passager_count line, the method was only adding half of the passagers to the train and leaving rest on the platform. No idea why!
-		passagers_count.times do 
-			@platform.each do |person|
-			train.add(remove(person))
+		if @trains.include? train
+			passagers_count.times do 
+				@platform.each do |person|
+				train.add(remove(person))
+				end
 			end
+		else
+			raise "#{Train} is not at this station"
 		end
 	end
 
