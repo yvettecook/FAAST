@@ -10,6 +10,7 @@ class Train
 
 	def arrive(station)
 		station.arrive(self)
+		self.empty(station)
 	end
 
 	def leave(station)

@@ -59,5 +59,18 @@ describe Train do
 		expect(station.passagers_count).to eq(120)
 	end
 
+	it "should automatically empty coaches when it arrives at a station" do
+		90.times do |person| 
+			person = Person.new 
+			train.add(person)
+		end
+		train.arrive(station)
+		expect(train.coaches[0].passagers_count).to eq(0)
+		expect(train.coaches[1].passagers_count).to eq(0)
+		expect(train.coaches[2].passagers_count).to eq(0)
+		expect(station.passagers_count).to eq(90)
+	end
+
+
 	
 end

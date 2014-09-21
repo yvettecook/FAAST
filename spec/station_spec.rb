@@ -31,19 +31,5 @@ describe Station do
 		expect(station.passagers_count).to eq(0)
 	end
 
-	# it "should be able to remove passangers from train" do
-	# 	20.times {
-	# 		person = Person.new
-	# 		person.touch_in(station)
-	# 	}
-	# 	train.arrive(station)
-	# 	station.passagers_board(train)
-	# 	expect(train.coaches[0].passagers_count).to eq(20)
-	# 	station.passangers_alight(train)
-	# 	expect(train.coaches[0].passagers_count).to eq(0)
-	# 	expect(station.passagers_count).to eq(20)
-	# end
-
-
 
 end
