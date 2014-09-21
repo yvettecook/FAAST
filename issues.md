@@ -9,7 +9,7 @@ Potential Improvements:
 - [ ] Refectoring needed across the board
 - [ ] There isn't a method to tell the system to 'touch_out' multiple passagers from a stations (can run x.times loop in IRB, but is timeconsuming)
 - [ ] Can only add all the passagers at a station onto a train, not a custom number
-- [ ] Train can't report the total number of passagers it's holding
+- [x] Train can't report the total number of passagers it's holding
 
 
 Bonus

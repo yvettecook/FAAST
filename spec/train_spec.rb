@@ -71,6 +71,12 @@ describe Train do
 		expect(station.passagers_count).to eq(90)
 	end
 
-
+	it "should be able to report how many passagers it's holding" do
+		90.times do |person| 
+			person = Person.new 
+			train.add(person)
+		end
+		expect(train.passagers_count).to eq(90)
+	end
 	
 end
