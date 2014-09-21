@@ -16,7 +16,7 @@ class Station
 		@platform.delete(person)
 	end
 
-	def passagers_count
+	def passengers_count
 		@platform.length
 	end
 
@@ -32,9 +32,9 @@ class Station
 		@trains.pop
 	end
 
-	def passagers_board(train)
+	def passengers_board(train)
 		if @trains.include? train
-			passagers_count.times do 
+			passengers_count.times do 
 				@platform.each do |person|
 				train.add(person)
 				self.remove(person)

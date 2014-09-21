@@ -7,24 +7,24 @@ class Coach
 		@on_board = []
 	end
 
-	def add_passager(passager)
-		@on_board << passager
+	def add_passenger(passenger)
+		@on_board << passenger
 	end
 
-	def remove(passager)
+	def remove(passenger)
 		@on_board.pop
 	end
 
-	def passagers_count
+	def passengers_count
 		@on_board.length
 	end
 
 	def full?
-		passagers_count == @capacity
+		passengers_count == @capacity
 	end
 
 	def empty(station)
-		passagers_count.times do 
+		passengers_count.times do 
 			@on_board.each do |person|
 				station.add(remove(person))
 			end		

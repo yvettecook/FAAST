@@ -18,12 +18,12 @@ class Train
 	end
 
 	def add(person)
-		if coaches[0].passagers_count < 40
-			@coaches[0].add_passager(person)
-		elsif coaches[1].passagers_count < 40
-			@coaches[1].add_passager(person)
-		elsif coaches[2].passagers_count < 40
-			@coaches[2].add_passager(person)
+		if coaches[0].passengers_count < 40
+			@coaches[0].add_passenger(person)
+		elsif coaches[1].passengers_count < 40
+			@coaches[1].add_passenger(person)
+		elsif coaches[2].passengers_count < 40
+			@coaches[2].add_passenger(person)
 		else
 			raise "Train full. #{Person} lost in the confusion"
 		end
@@ -35,10 +35,10 @@ class Train
 		end
 	end
 
-	def passagers_count
-		a = @coaches[0].passagers_count
-		b = @coaches[1].passagers_count
-		c = @coaches[2].passagers_count
+	def passengers_count
+		a = @coaches[0].passengers_count
+		b = @coaches[1].passengers_count
+		c = @coaches[2].passengers_count
 		return a + b + c
 	end
 

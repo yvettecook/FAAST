@@ -9,7 +9,7 @@ The FAAST system will cater for the following:
 * Trains will travel from station to station
 * Inside of a station, when the train stops, passangers will alight and enter the carriages of the train
 * A passagnge will touch in at the station, and touch out at the destination station
-* Each coach of a train can hold up to 40 passagers
+* Each coach of a train can hold up to 40 passengers
 * Each train is made of a number of coaches
 
 ####Tools Used
@@ -23,6 +23,9 @@ The FAAST system will cater for the following:
 #### Objects and Methods
 
 1. Person
+	* touch_in(station)
+	* touch_out(station) 
 2. Station
+	* pass
 3. Train
 4. Coach

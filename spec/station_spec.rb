@@ -8,9 +8,9 @@ describe Station do
 	let (:person) { Person.new }
 	let (:train) { Train.new }
 
-	it "should hold passagers" do
+	it "should hold passengers" do
 		station.add(person)
-		expect(station.passagers_count).to eq(1)
+		expect(station.passengers_count).to eq(1)
 	end
 
 	it "should hold trains" do
@@ -18,16 +18,16 @@ describe Station do
 		expect(station.train_count).to eq(1)
 	end
 
-	it "should be able to add passagers to coaches" do
+	it "should be able to add passengers to coaches" do
 		20.times {
 			person = Person.new
 			person.touch_in(station)
 		}
-		expect(station.passagers_count).to eq(20)
+		expect(station.passengers_count).to eq(20)
 		train.arrive(station)
-		station.passagers_board(train)
-		expect(train.coaches[0].passagers_count).to eq(20)
-		expect(station.passagers_count).to eq(0)
+		station.passengers_board(train)
+		expect(train.coaches[0].passengers_count).to eq(20)
+		expect(station.passengers_count).to eq(0)
 	end
 
 	it "should not lose passangers when attempting to overfill a train" do
@@ -36,20 +36,20 @@ describe Station do
 			person.touch_in(station)
 		}
 		train.arrive(station)
-		expect(lambda { station.passagers_board(train)}).to raise_error(RuntimeError)
-		expect(train.passagers_count).to eq(120)
-		expect(station.passagers_count).to eq(20)
+		expect(lambda { station.passengers_board(train)}).to raise_error(RuntimeError)
+		expect(train.passengers_count).to eq(120)
+		expect(station.passengers_count).to eq(20)
 	end
 
-	it "should not be able to add passagers to a train that isn't at the station" do
+	it "should not be able to add passengers to a train that isn't at the station" do
 		20.times {
 			person = Person.new
 			person.touch_in(station)
 		}
 		train2 = Train.new
-		expect(lambda {station.passagers_board(train2)}).to raise_error(RuntimeError)
-		expect(station.passagers_count).to eq(20)
-		expect(train2.passagers_count).to eq(0)
+		expect(lambda {station.passengers_board(train2)}).to raise_error(RuntimeError)
+		expect(station.passengers_count).to eq(20)
+		expect(train2.passengers_count).to eq(0)
 	end
 
 	it "should deduct 2 GBP from balance when touching in" do

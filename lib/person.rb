@@ -6,7 +6,6 @@ class Person
 		@balance = 10
 	end
 
-
 	def touch_in(station)
 		if @balance > 2
 			station.add(self)

@@ -11,20 +11,20 @@ describe Coach do
 	end
 
 	it "should be able to add people" do
-		coach.add_passager(:person)
-		expect(coach.passagers_count).to eq(1)
+		coach.add_passenger(:person)
+		expect(coach.passengers_count).to eq(1)
 	end
 
 	it "should be able to remove people" do
-		coach.add_passager(:person)
+		coach.add_passenger(:person)
 		coach.remove(:person)
-		expect(coach.passagers_count).to eq(0)
+		expect(coach.passengers_count).to eq(0)
 	end
 
 	it "should be able to report if full" do
 		40.times { |person|
 			person = Person.new
-			coach.add_passager(person) 
+			coach.add_passenger(person) 
 		}
 		expect(coach.full?).to eq(true)
 	end
@@ -32,11 +32,11 @@ describe Coach do
 	it "should be able to empty itself onto a station" do
 		40.times { |person|
 			person = Person.new
-			coach.add_passager(person) 
+			coach.add_passenger(person) 
 		}
 		coach.empty(station)
-		expect(coach.passagers_count).to eq(0)
-		expect(station.passagers_count).to eq(40)
+		expect(coach.passengers_count).to eq(0)
+		expect(station.passengers_count).to eq(40)
 	end
 
 end
