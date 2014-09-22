@@ -6,7 +6,7 @@ describe Station do
 
 	let (:station) { Station.new }
 	let (:person) { double :person }
-	let (:train) { Train.new }
+	let (:train) { double :train}
 
 	it "should hold passengers" do
 		station.add(person)
@@ -14,7 +14,7 @@ describe Station do
 	end
 
 	it "should hold trains" do
-		train.arrive(station)
+		station.arrive(train)
 		expect(station.train_count).to eq(1)
 	end
 
@@ -24,21 +24,10 @@ describe Station do
 			station.platform << person 
 		}
 		expect(station.passengers_count).to eq(20)
-		train.arrive(station)
+		station.arrive(train)
+		allow(train).to receive(:add).with (anything)
 		station.passengers_board(train)
-		expect(train.coaches[0].passengers_count).to eq(20)
 		expect(station.passengers_count).to eq(0)
-	end
-
-	it "should not lose passangers when attempting to overfill a train" do
-		140.times{
-			person = double :person
-			station.platform << person
-		}
-		train.arrive(station)
-		expect(lambda { station.passengers_board(train)}).to raise_error(RuntimeError)
-		expect(train.passengers_count).to eq(120)
-		expect(station.passengers_count).to eq(20)
 	end
 
 	it "should not be able to add passengers to a train that isn't at the station" do
@@ -46,10 +35,9 @@ describe Station do
 			person = double :person
 			station.platform << person
 		}
-		train2 = Train.new
+		train2 = double train
 		expect(lambda {station.passengers_board(train2)}).to raise_error(RuntimeError)
 		expect(station.passengers_count).to eq(20)
-		expect(train2.passengers_count).to eq(0)
 	end
 
 end
