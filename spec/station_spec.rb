@@ -5,7 +5,7 @@ require 'person'
 describe Station do 
 
 	let (:station) { Station.new }
-	let (:person) { Person.new }
+	let (:person) { double :person }
 	let (:train) { Train.new }
 
 	it "should hold passengers" do
@@ -20,8 +20,8 @@ describe Station do
 
 	it "should be able to add passengers to coaches" do
 		20.times {
-			person = Person.new
-			person.touch_in(station)
+			person = double :person
+			station.platform << person 
 		}
 		expect(station.passengers_count).to eq(20)
 		train.arrive(station)
@@ -32,8 +32,8 @@ describe Station do
 
 	it "should not lose passangers when attempting to overfill a train" do
 		140.times{
-			person = Person.new
-			person.touch_in(station)
+			person = double :person
+			station.platform << person
 		}
 		train.arrive(station)
 		expect(lambda { station.passengers_board(train)}).to raise_error(RuntimeError)
@@ -43,21 +43,13 @@ describe Station do
 
 	it "should not be able to add passengers to a train that isn't at the station" do
 		20.times {
-			person = Person.new
-			person.touch_in(station)
+			person = double :person
+			station.platform << person
 		}
 		train2 = Train.new
 		expect(lambda {station.passengers_board(train2)}).to raise_error(RuntimeError)
 		expect(station.passengers_count).to eq(20)
 		expect(train2.passengers_count).to eq(0)
 	end
-
-	it "should deduct 2 GBP from balance when touching in" do
-		a = person.balance
-		person.touch_in(station)
-		expect(person.balance).to eq(a - 2)
-	end 
-
-	
 
 end

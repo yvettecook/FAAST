@@ -1,5 +1,4 @@
 require 'person'
-require 'coach'
 
 describe Person do
 
