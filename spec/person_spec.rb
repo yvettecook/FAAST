@@ -4,19 +4,17 @@ require 'coach'
 describe Person do
 
 let (:person) { Person.new }
-let (:coach) { Coach.new }
-let (:station) { Station.new }
+let (:station) { double :station }
 
 
 	it "should be able to touch in at a station" do
+		expect(station).to receive(:add).with person
 		person.touch_in(station)
-		expect(station.passengers_count).to eq(1) 
 	end
 
 	it "should be able to touch out of a station" do
-		person.touch_in(station)
+		expect(station).to receive(:remove).with person
 		person.touch_out(station)
-		expect(station.passengers_count).to eq(0)
 	end
 
 	it "should hold a random amount of money on initialize" do
