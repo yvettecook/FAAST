@@ -26,7 +26,8 @@ class Coach
 	def empty_passengers(station)
 		passengers_count.times do 
 			@on_board.each do |person|
-				station.add(remove(person))
+				self.remove(person)
+				station.add(person)
 			end		
 		end
 	end
