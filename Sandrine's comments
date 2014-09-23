@@ -1,0 +1,13 @@
+## Bugs to correct
+* A Person should be able to touch in a station if balance is >=2 (currently not possible if balance = 2).
+* A Person shouldn't be able to touch in several times in a row without touching out first.
+* Trains are initialized "nowhere" at the moment (should be at a station?)
+* Stations don't have a maximum capacity.
+
+## Other comments
+* Passengers don't have free will. It's the responsibility of stations and trains to move them. 
+How would the system work if it was the passengers' responsibility to decide to board or exit a train?
+Shouldn't a person know where he is (in a station, in a train)?
+
+* Trains don't explicitely stop at stations. One of the requirements is that passengers should be able to board
+and exit a train only if it is stopped at a station. Check if this requirement is met?
