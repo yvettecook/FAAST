@@ -3,7 +3,7 @@ require 'coach'
 
 describe Train do 
 
-	let (:train) { Train.new }
+	let (:train) { Train.new(Coach) }
 	let (:station) { double :station }
 
 	it "should be created with a default of 3 coaches " do

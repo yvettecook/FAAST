@@ -23,13 +23,12 @@ class Coach
 		passengers_count == @capacity
 	end
 
-	def empty_passengers(station)
-		passengers_count.times do 
-			@on_board.each do |person|
-				self.remove(person)
-				station.add(person)
-			end		
-		end
+	def empty_passengers station
+		@on_board.dup.each {|person| transfer(person, to: station)}
+	end
+
+	def transfer person, to: station
+		to.add(self.remove(person))		
 	end
 
 end

@@ -5,7 +5,7 @@ require 'coach'
 
 describe Train do
 
-	let (:train) { Train.new }
+	let (:train) { Train.new(Coach) }
 	let (:coach) { Coach.new }
 	let (:station) { Station.new }
 	let (:person) { Person.new }

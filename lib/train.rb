@@ -1,11 +1,9 @@
-require 'coach'
-
 class Train
 
 	attr_reader :coaches
 
-	def initialize
-		@coaches = [Coach.new, Coach.new, Coach.new]
+	def initialize(coach)
+		@coaches = [coach.new, coach.new, coach.new]
 	end
 
 	def arrive(station)
@@ -18,28 +16,30 @@ class Train
 	end
 
 	def add(person)
-		if coaches[0].passengers_count < 40
-			@coaches[0].add_passenger(person)
-		elsif coaches[1].passengers_count < 40
-			@coaches[1].add_passenger(person)
-		elsif coaches[2].passengers_count < 40
-			@coaches[2].add_passenger(person)
-		else
-			raise "Train full. #{Person} lost in the confusion"
-		end
+		raise "Train full." if all_coaches_full?
+		place_person_in_available_coach(person)
+	end
+
+	def place_person_in_available_coach(person)
+		return coaches.first.add_passenger(person) unless coaches.first.full?
+		return coaches[1].add_passenger(person) unless coaches[1].full?
+		return coaches.last.add_passenger(person) unless coaches.last.full?
+	end
+
+	def all_coaches_full?
+		passengers_count == overall_capacity
+	end
+
+	def overall_capacity
+		coaches.inject(0) {|memo, coach| memo + coach.capacity}
 	end
 
 	def empty_passengers(station)
-		@coaches.each do |coach|
-			coach.empty_passengers(station)
-		end
+		@coaches.each {|coach|coach.empty_passengers(station)}
 	end
 
 	def passengers_count
-		a = @coaches[0].passengers_count
-		b = @coaches[1].passengers_count
-		c = @coaches[2].passengers_count
-		return a + b + c
+		@coaches.inject(0) {|memo, coach| memo  + coach.passengers_count}
 	end
 
 end

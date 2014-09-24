@@ -22,7 +22,7 @@ let (:station) { double :station }
 
 	it "should be unable to enter station with less than 2GBP balance" do
 		person.balance=(1)
-		expect(lambda {person.touch_in(station)}).to raise_error(RuntimeError)
+		expect(lambda {person.touch_in(station)}).to raise_error "Insufficent balance to travel"
 	end
 
 	

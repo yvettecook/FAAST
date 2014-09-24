@@ -7,12 +7,9 @@ class Person
 	end
 
 	def touch_in(station)
-		if @balance > 2
-			station.add(self)
-			@balance = @balance -2
-		else
-			raise "Insufficent balance to travel"
-		end
+		raise "Insufficent balance to travel" if balance < 2
+		station.add(self) 
+		self.balance -= 2
 	end
 
 	def touch_out(station)

@@ -6,9 +6,8 @@ describe Station do
 	let (:person) { double :person }
 	let (:train) { double :train}
 
-	it "should hold passengers" do
-		station.add(person)
-		expect(station.passengers_count).to eq(1)
+	it "should add passengers" do
+		expect{station.add(person)}.to change{station.passengers_count}.by 1
 	end
 
 	it "should hold trains" do
@@ -16,26 +15,35 @@ describe Station do
 		expect(station.train_count).to eq(1)
 	end
 
-	it "should be able to add passengers to coaches" do
+	it "should be able to add multiple passengers to coaches" do
 		20.times {
 			person = double :person
 			station.platform << person 
 		}
-		expect(station.passengers_count).to eq(20)
 		station.arrive(train)
 		allow(train).to receive(:add).with (anything)
 		station.passengers_board(train)
 		expect(station.passengers_count).to eq(0)
 	end
-
-	it "should not be able to add passengers to a train that isn't at the station" do
-		20.times {
+	
+	context "train isn't at the station" do 
+		before(:each) do 
+			20.times {
 			person = double :person
 			station.platform << person
 		}
-		train2 = double train
-		expect(lambda {station.passengers_board(train2)}).to raise_error(RuntimeError)
-		expect(station.passengers_count).to eq(20)
+		@train2 = double :train
+		end
+
+	it "should raise an error" do
+		expect(lambda {station.passengers_board(@train2)}).to raise_error "Train is not at this station"
 	end
+
+	it "shouldn't remove passengers" do 
+			expect(station.passengers_count).to eq(20)
+
+	end
+
+end
 
 end
