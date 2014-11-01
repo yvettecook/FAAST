@@ -1,7 +1,12 @@
-##Makers Academy 
-###Week 1: Architect Badge Challenge
+#FAAST (Fast And AcceSsible Tube)
 
-####Spec
+A ruby programme to manage a tube system.
+
+##Architect Badge Challenge
+
+Week 1, weekend challenge for Makers Academy
+
+##Spec
 
 The FAAST system will cater for the following:
 
@@ -13,15 +18,24 @@ The FAAST system will cater for the following:
 * Each train is made of a number of coaches
 * Passengers can only touch in at a station (and board a train) if their balance is more than 2 GBP
 
-####Tools Used
+##Tools Used
 
-* Sublime Text 3 
+* Ruby
+* RSpec
 * Command Line
 * IRB
-* RSpec
 * Git Hub
 
-#### Objects, Attributes and Methods
+
+## Learning Aims
+
+* Use Test Driven development
+* London Style Testing with doubles
+* 
+
+
+
+## Usage
 
 Methods listed are those needed to use the program. There are others in the background that wouldn't normally be directly accessed.
 
