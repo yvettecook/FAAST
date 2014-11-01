@@ -4,7 +4,7 @@ A ruby programme to manage a tube system.
 
 ##Architect Badge Challenge
 
-Week 1, weekend challenge for Makers Academy
+Week 1 challenge for Makers Academy
 
 ##Spec
 
@@ -26,14 +26,13 @@ The FAAST system will cater for the following:
 * IRB
 * Git Hub
 
-
 ## Learning Aims
+
+Things to focus on:
 
 * Use Test Driven development
 * London Style Testing with doubles
-* 
-
-
+* Short methods
 
 ## Usage
 
